@@ -6,11 +6,11 @@ import {
 } from '@nestjs/common';
 import { ScraperService } from './scraper.service';
 
-@Controller('scraper')
+@Controller('product')
 export class ScraperController {
   constructor(private readonly scraperService: ScraperService) {}
 
-  @Get('products')
+  @Get('search')
   async getScrapedProducts(
     @Query('store') store: string,
     @Query('searchTerm') searchTerm: string,

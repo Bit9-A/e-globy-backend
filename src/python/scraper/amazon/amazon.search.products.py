@@ -35,7 +35,7 @@ def get_search_results(search_term, max_results=1000, page_soup=None, page_numbe
             if len(products) >= max_results:
                 break
             try:
-                title_tag = item.find('h2')
+                title_tag = item.find('h2',{'class': 'a-size-medium a-spacing-none a-color-base a-text-normal'})
                 title = title_tag.get_text(strip=True) if title_tag else "N/A"
                 a_tag = item.find('a', {'class': 'a-link-normal s-no-outline'}, href=True)
                 url = "https://www.amazon.com" + a_tag['href'] if a_tag else "N/A"
